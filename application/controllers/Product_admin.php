@@ -22,7 +22,7 @@ class Product_admin extends CI_Controller
         $this->load->library('form_validation');
         $this->form_validation->set_error_delimiters("<span class='text-danger'>","</span>");
 
-        $this->form_validation->set_rules('nama_produk', 'nama_produk', 'trim|required');
+        $this->form_validation->set_rules('nama_produk', 'nama_produk', 'trim|required|is_unique[tb_produk.nama_produk]');
         $this->form_validation->set_rules('harga', 'harga', 'trim|required');
         $this->form_validation->set_rules('deskripsi', 'deskripsi', 'trim|required');
         // $this->form_validation->set_rules('username', 'Username', 'trim|required|is_unique[users.username]|min_length[8]');
@@ -85,7 +85,12 @@ class Product_admin extends CI_Controller
             ->get('tb_produk')
             ->row(0);
 
-        $this->form_validation->set_rules('nama_produk', 'nama_produk', 'trim|required');
+        $unique_nama_produk = "";
+        if ($this->input->post('username') != $users_data->nama_produk) {
+        $unique_nama_produk = '|is_unique[tb_produk.nama_produk]';
+        }
+
+        $this->form_validation->set_rules('nama_produk', 'nama_produk', 'trim|required|is_unique[tb_produk.nama_produk]');
         $this->form_validation->set_rules('harga', 'harga', 'trim|required');
         $this->form_validation->set_rules('deskripsi', 'deskripsi', 'trim|required');
 
