@@ -1,0 +1,6 @@
+untuk mengakses admin:
+ketik dibrowser: localhost/testcasemajoo/login
+username: admin
+password: admin
+
+it's temporary, will be updated soon
