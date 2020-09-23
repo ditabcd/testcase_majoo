@@ -81,7 +81,7 @@ class Product_admin extends CI_Controller
 
 
         $users_data = $this->db
-            ->where('id', $id_users)
+            ->where('id', $id)
             ->get('tb_produk')
             ->row(0);
 
