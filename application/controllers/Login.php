@@ -25,7 +25,7 @@ class Login extends CI_Controller {
 		$this->db->where('username', $username);
 		$this->db->where('password',$password);
 		return $this->db->get()->row();
-	}
+    }
 
 	public function aksi_login()
 	{
