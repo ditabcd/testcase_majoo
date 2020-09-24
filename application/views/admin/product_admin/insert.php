@@ -10,7 +10,7 @@
                             <img src="<?php echo base_url('storage/product/default.png') ?>" width="100px" alt="" class="img-preview">
                         </label>
                         <div class="col-md-9">
-                            <input type="file" name="gambar" id="input-file"><br>
+                            <input type="file" name="gambar" class="form-control" id="input-file"><br>
                             <?php echo (isset($error_gambar) ? "<span class='text-danger'>" . $error_gambar . "</span>" : "") ?>
                         </div>
                     </div>
